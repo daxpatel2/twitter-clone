@@ -1,24 +1,32 @@
 /*here is going to be that entire gray box that is the twitter widget, whats happeing in the only stlyeling besides the gray box*/
 /* rest of the styling will be done to the individual widget which is in the datafetcher.css */
 .widget {
+    border-radius: 15px;
+    border-color: #14171a;
     padding-left: 20px;
     padding-right: 20px;
     flex: .3;
-    border-radius: 15px;
-    background-color: #f5f8fa;
+    background-color: white;
     margin-top: 20px;
     margin-bottom: 20px;
-
 }
+
 .blocks {
+    border-radius: 15px;
+    background-color: var(--background-color);
     border-bottom: 1px solid #e6ecf0;
-    padding: 10px 15px;
+    padding: 10px;
     display: flex;
     align-items: center;
 }
 
-.whats-happening {
-    font-size: 19px;
+
+.items > .whats-happening {
+    font-size: 15px;
     font-weight: bold;
     color: #14171a;
+}
+
+.widget > .copyright-stuff {
+    font-size: 5px;
 }

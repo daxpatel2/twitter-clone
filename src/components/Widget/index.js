@@ -10,6 +10,7 @@ function Widget() {
                     <WidgetNews />
                 </div>
             </div>
+            <p className="copyright-stuff">Made with love by @algorithmpirate</p>
         </div>
     )
 }
