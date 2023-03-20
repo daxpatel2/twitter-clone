@@ -1,9 +1,10 @@
 import React from "react";
-
+import Loginmain from "./loginuser";
+//this is going to be the frontend stuff
 function Login() {
     return (
         <div>
-            <h2>Login Page Render?</h2>
+            <Loginmain />
         </div>
     )
 }
