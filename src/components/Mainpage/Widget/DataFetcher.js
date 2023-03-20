@@ -11,7 +11,7 @@ function DataFetcher({ category }) {
       .catch(error => console.error(error));
   }, []);
 
-  const type= category;
+  const type = category;
   const title = data.title;
   const link = data.link;
 
