@@ -6,14 +6,16 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Login from './components/Login'
 import Main from './components/Mainpage'
+import Signup from './components/Signup'
 
-
+//change login to signup when we have a componenet
 
 function App() {
   return (
     <Routes>
       <Route path='/' element={ <Login /> }></Route>
       <Route path='main' element={ <Main /> }></Route>
+      <Route path='/signup' element= { <Signup /> }></Route>
     </Routes>
     
   );

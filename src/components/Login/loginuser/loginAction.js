@@ -5,7 +5,16 @@
 //than continue
 //else warn that it is not
 
-const usrName = Document.getElementById("username");
+
+//object.onclick = function(){doSomething()};
+function verifyLogin() {
+    //run it onClick in the button
+    const usrName = document.getElementsByClassName("user-input").value;
+    const password = document.getElementsByClassName("pass-input").value;
+
+    console.log(usrName);
+}
+
 
 //run that throught the databse
 //usrName must be unique
@@ -15,3 +24,6 @@ const usrName = Document.getElementById("username");
 //could do it based on port or ip for simplicty for now
 //usericon and stuff needs to show at the buttom of the feed aswell
 //all this is realated to the users login (how do we control the app based on who logins)
+
+
+export default verifyLogin;
