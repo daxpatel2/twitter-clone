@@ -1,9 +1,13 @@
+import Signupforms from "./signupuser";
+import './index.css';
+import TwitterIcon from '@material-ui/icons/Twitter';
+
 
 function Signup() {
     return (
-        <div>
-            <h2> Welcome to the signup page</h2>
-            <p>Please create an account below</p>
+        <div className="register-main">
+            <TwitterIcon className="twitter-logo" />
+            <Signupforms />
         </div>
     )
 }

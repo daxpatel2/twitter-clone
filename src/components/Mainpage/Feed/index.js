@@ -13,7 +13,6 @@ function Feed() {
             <Feedcontent />
         </div>
     )
-
 }
 
 export default Feed;
