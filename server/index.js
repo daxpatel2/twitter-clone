@@ -33,27 +33,21 @@ app.post('/signup', (req,res)=> {
 //for login first check if the username is in the db (will be a unique value)
 
 app.get('/', (req,res)=> {
-    const username = req.body.username;
-    const password = req.body.password;
+    //const username = req.body.username;
+    //const password = req.body.password;
 
-    //sql query to insert the username and password into the db
+    //sql query to insert the username and password into the db WHERE username = (?) AND password = (?), [username,password]
 
-    db.query("SELECT * FROM users WHERE username = (?) AND password = (?)",[username,password], (err,data)=> {
+    db.query("SELECT * FROM users", (err,data)=> {
         if(err) {
-            req.setEncoding({err: err})
+            return res.json(err)
         } else {
-            if (data.length > 0) {
-                res.send(data)
-            } else {
-                res.send({message: "Wrong username/password"})
-            }
+            return res.json(data)
         }
     })
 })
-// route to get all users
-//techniquly for login we only need to get the username not password
-//since we are going to check if the username is in the db and it will be a unqiue value
-app.listen(3000, () => {
+
+app.listen(8806, () => {
     console.log('running db server')
 })
 
