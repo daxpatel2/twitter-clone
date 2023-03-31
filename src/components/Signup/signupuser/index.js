@@ -8,6 +8,7 @@ function Signupforms() {
     //create a state for the username and password
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
+    //test commit
     
     //will run through the onClick command in HTML button
     function register() {
