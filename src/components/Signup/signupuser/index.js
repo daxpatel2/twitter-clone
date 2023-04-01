@@ -1,28 +1,32 @@
 import './index.css';
-import Axios from 'axios';
 import { useState, React } from 'react';
+import { auth } from '../../../firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 function Signupforms() {
-    //once it works change all the usenames to emails
-    const [username, setUsername] = useState('');
+    const [email, setemail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
 
-
     const handleSubmit = (event) => {
         event.preventDefault();
-        setUsername('');
-        setPassword('');
-        setMessage(`hello ${username}!`);
+        createUserWithEmailAndPassword(auth,email, password)
+            .then((userCredential) => {
+                setMessage(`Account created for ${userCredential.user.email}`);
+            })
+            .catch((error) => {
+                setMessage(error.message);
+            }
+        );
     };
 
     return (
         <div>
             <h2 className="title-signup-page">Join Twitter today</h2>
-            <form onSubmit={handleSubmit}>
-                <div className='username'>
-                    <input value={username} name="username" placeholder="username" className="user-input" type="text" onChange={(event) => {
-                        setUsername(event.target.value);
+            <form onSubmit={handleSubmit} className='forms'>
+                <div className='email'>
+                    <input value={email} name="email" placeholder="email" className="user-input" type="text" onChange={(event) => {
+                        setemail(event.target.value);
                     }}></input>
                 </div>
                 <div className='password'>
@@ -30,8 +34,8 @@ function Signupforms() {
                         setPassword(event.target.value);
                     }}></input>
                 </div>
+                <p className='message'>{message}</p>
                <button className="register-button" type='submit'>Next</button>
-               <h2>{message}</h2>
             </form>
             <div className='returning-user'>
                 <p className='returning-user-text'>Already have and account?</p>

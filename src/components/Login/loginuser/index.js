@@ -1,42 +1,47 @@
-//use this to pass the component for login
+import { auth } from '../../../firebase'
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import './index.css';
-import Axios from 'axios';
+import React, { useState } from "react";
 
-//this should have the buttons and stuff
-import React from "react";
-//this is going to be the frontend stuff
 function Loginmain() {
-    //create a state for the username and password
-    const [usernameReg, setUsername] = React.useState('');
-    const [passwordReg, setPassword] = React.useState('');
-    
-    //create a function that will send the username and password to the backend
-    function login() {
-        Axios.post('http://localhost:3002/login', {username: usernameReg, password: passwordReg}).then((response) => {
-            console.log(response);
-        });
-    }
+    //create a state for the emailsetemail and password
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        signInWithEmailAndPassword(auth,email, password)
+            .then((userCredential) => {
+                setMessage(`Attempting login for ${userCredential.user.email}`);
+            })
+            .catch((error) => {
+                setMessage(error.message);
+            }
+        );
+    };
 
     return (
         <div>
             <h2 className="title-login-page">Sign in to Twitter</h2>
-            <div className="forms">
-                <div className='username'>
-                    <input placeholder="username" className="user-input" type="text" onChange={(e) => {
-                        setUsername(e.target.value);
+            <form onSubmit={handleSubmit} oclassName="forms">
+                <div className='email'>
+                    <input value={email} placeholder="email-input" className="user-input" type="text" onChange={(event) => {
+                        setEmail(event.target.value);
                     }}></input>
                 </div>
                 <div className='password'>
-                    <input placeholder="password" className="pass-input" type="text" onChange={(e) => {
-                        setPassword(e.target.value);
+                    <input value={password} placeholder="password" className="pass-input" type="text" onChange={(event) => {
+                        setPassword(event.target.value);
                     }}></input>
                 </div>
-                <button className="login-button" >Next</button>
+                <p className="message">{message}</p>
+                <button className="login-button">Next</button>
                 <div className='new-user'>
                     <p className='new-user-text'>Don't have an account?</p>
                     <a href='/signup' className='signup=link'>Sign up</a>
                 </div>
-            </div>
+            </form>
         </div>
     )
 }
