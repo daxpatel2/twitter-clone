@@ -1,8 +1,5 @@
 //this is whats going to be rendered in react, so we can pass all the componenets here
-import './App.css'
-// import Feed from './components/Mainpage/Feed';
-// import Sidebar from './components/Mainpage/Sidebar';
-// import Widget from './components/Mainpage/Widget';
+import './App.css';
 import { Routes, Route } from 'react-router-dom'
 import Login from './components/Login'
 import Main from './components/Mainpage'
