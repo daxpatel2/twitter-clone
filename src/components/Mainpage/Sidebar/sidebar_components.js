@@ -1,4 +1,5 @@
 import './sidebar_components.css';
+
 //since each thing in the sidebar is the exact same interms of componenets
 //only thing that is different is the name, and the logo
 //we make them into components so we dont have to repeat code

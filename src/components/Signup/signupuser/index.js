@@ -2,17 +2,21 @@ import './index.css';
 import { useState, React } from 'react';
 import { auth } from '../../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 function Signupforms() {
     const [email, setemail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    let navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
         createUserWithEmailAndPassword(auth,email, password)
             .then((userCredential) => {
                 setMessage(`Account created for ${userCredential.user.email}`);
+                //if account created successfully
+                navigate('/main');
             })
             .catch((error) => {
                 setMessage(error.message);
