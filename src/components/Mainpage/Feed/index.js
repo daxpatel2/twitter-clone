@@ -2,6 +2,8 @@ import './index.css'
 import Tweetbox from './tweetbox';
 import Feedcontent from './feedcontent';
 
+//this is logic and style for the entire feed including the box at the top
+
 function Feed() {
     return (
         <div className="feed">

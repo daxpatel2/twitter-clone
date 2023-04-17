@@ -10,7 +10,6 @@ function Loginmain() {
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
     let navigate = useNavigate();
-    //const [route, setRoute] = useState(''); //this is for the route to the main page
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -18,6 +17,9 @@ function Loginmain() {
             .then((userCredential) => {
                 //if login was successfully
                 setMessage(`Attempting login for ${userCredential.user.email}`);
+                //we should set a unique id for each user in the database, upon login change the useState of Unique ID to that unique ID
+                //after that we can query the database with that unique id to retrive info like their tweets and profile pics
+                //maybe pass that in as a paratmeter? like we did for the sidebar?
                 //setRoute(`/mainpage`)
                 setMessage(`routing to mainpage for ${userCredential.user.email}`);
                 //navigate to /main
