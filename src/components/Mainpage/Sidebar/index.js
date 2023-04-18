@@ -7,8 +7,8 @@ import ExploreIcon from '@material-ui/icons/Explore';
 import MessageIcon from '@material-ui/icons/Message'
 import NotificaIcon from '@material-ui/icons/NotificationsNone'
 import { Button } from '@material-ui/core' //since this is material UI core it is a clickable button rather than a svg image which would be @material-ui/icons
-import './User/userComponent'
-import UserComponent from './User/userComponent';
+import './User Images/userComponent'
+import UserComponent from './User Images/userComponent';
 
 
 function Sidebar() {
