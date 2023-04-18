@@ -1,6 +1,7 @@
 .feed {
     flex: .4;
     border-right: 1px solid var(--background-color);
+    border-left: 1px solid var(--background-color);
     min-width: fit-content;
     overflow-y: scroll;
     scrollbar-width: none;
