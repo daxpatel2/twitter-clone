@@ -1,5 +1,5 @@
 import './index.css';
-//import WidgetNews from './widget_news';
+import WidgetNews from './widget_news';
 import DataFetcher from './DataFetcher';
 //find better styling for made with love by @algorithmpirate
 

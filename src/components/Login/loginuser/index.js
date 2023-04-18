@@ -36,7 +36,7 @@ function Loginmain() {
             <h2 className="title-login-page">Sign in to Twitter</h2>
             <form onSubmit={handleSubmit} className="forms">
                 <div className='email'>
-                    <input value={email} placeholder="email-input" className="user-input" type="text" onChange={(event) => {
+                    <input value={email} placeholder="email" className="user-input" type="text" onChange={(event) => {
                         setEmail(event.target.value);
                     }}></input>
                 </div>
@@ -48,8 +48,7 @@ function Loginmain() {
                 <p className="message">{message}</p>
                 <button className="login-button">Next</button>
                 <div className='new-user'>
-                    <p className='new-user-text'>Don't have an account?</p>
-                    <a href='/signup' className='signup=link'>Sign up</a>
+                    <a href='/signup' className='new-user-text'>Don't have an account?</a>
                 </div>
             </form>
         </div>

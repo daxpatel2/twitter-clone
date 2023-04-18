@@ -21,7 +21,6 @@
 
 }
 
-
 .forms > .password > .pass-input {
     border: none;
     outline: none;
@@ -30,15 +29,26 @@
 }
 
 .forms > .register-button {
-    background: var(--twitter-color);
+    background: black;
 	border: none;
 	border-radius: 20px;
 	cursor: pointer;
-	color: black;
-	font-weight: 600;
+	color: white;
+	font-weight: 800;
 	letter-spacing: .05em;
 	overflow: hidden;
-	padding: 1.15em 3.5em;
+	padding: .5em 12em;
 	min-height: 3.3em;
 	position: relative;
+}
+
+.returning-user > .returning-user-text {
+    font-size: 14px;    
+    color: #536371;
+    margin-top: 10px;
+    padding: 10px;
+    position: relative;
+    left: 85px;
+    top: 15px;
+    text-decoration: none;
 }

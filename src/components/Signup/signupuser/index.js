@@ -42,8 +42,7 @@ function Signupforms() {
                <button className="register-button" type='submit'>Next</button>
             </form>
             <div className='returning-user'>
-                <p className='returning-user-text'>Already have and account?</p>
-                <a href='/' className='signup=link'>Sign in</a>
+                <a href='/' className='returning-user-text'>Already have an account?</a>
             </div>
         </div>
     )

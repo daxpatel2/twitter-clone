@@ -3,6 +3,8 @@
     font-size: 36px;
     font-weight: 700;
     color: black;
+    position: relative;
+
 }
 
 .forms > .username,.password {
@@ -18,7 +20,6 @@
     outline: none;
     background: none;
     font-size: 18px;
-
 }
 
 
@@ -30,15 +31,26 @@
 }
 
 .forms > .login-button {
-    background: var(--twitter-color);
+    background: black;
 	border: none;
 	border-radius: 20px;
 	cursor: pointer;
-	color: black;
-	font-weight: 600;
+	color: white;
+	font-weight: 800;
 	letter-spacing: .05em;
 	overflow: hidden;
-	padding: 1.15em 3.5em;
+	padding: .5em 12em;
 	min-height: 3.3em;
 	position: relative;
+}
+
+.new-user > .new-user-text {
+    font-size: 14px;    
+    color: #536371;
+    margin-top: 10px;
+    padding: 10px;
+    position: relative;
+    left: 90px;
+    top: 15px;
+    text-decoration: none;
 }
