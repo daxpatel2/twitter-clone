@@ -7,10 +7,10 @@ function Feedcontent () {
     return (
         <div className='post'>
             <Post displayName={'Dax'} text={'hello does this work'} image={"none"}/>
-            <Post displayName={'dax'} text={'hello does this work'}/>
-            <Post displayName={'dax'} text={'hello does this work'}/>
-            <Post displayName={'dax'} text={'hello does this work'}/>
-            <Post displayName={'dax'} text={'hello does this work'}/>
+            <Post displayName={'adon'} text={'hello does this work'}/>
+            <Post displayName={'caleb'} text={'hello does this work'}/>
+            <Post displayName={'shurya'} text={'hello does this work'}/>
+            <Post displayName={'tej'} text={'hello does this work'}/>
         </div>
 
     )

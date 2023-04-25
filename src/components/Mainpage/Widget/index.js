@@ -1,5 +1,4 @@
 import './index.css';
-import WidgetNews from './widget_news';
 import DataFetcher from './DataFetcher';
 //find better styling for made with love by @algorithmpirate
 
@@ -23,4 +22,3 @@ function Widget() {
 
 export default Widget;
 
-//<WidgetNews text="Technology" category="technology"/> <WidgetNews text="Sports" category="sports"/> <WidgetNews text="Trending" category="trending"/>

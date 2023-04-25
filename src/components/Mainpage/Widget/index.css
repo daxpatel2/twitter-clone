@@ -22,13 +22,21 @@
     font-size: 25px;
     font-weight: bold;
     color: #14171a;
-    padding-left: 10px;
+    padding-left: 15px;
 }
 
 .widget > .copyright-stuff {
     font-size: 10px;
     margin-bottom: 10px;
     color: #14171a;
-    padding-left: 10px;
+    padding-left: 15px;
     padding-top: 5px;
+}
+
+.see-more {
+    padding: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--twitter-color);
+    padding-left: 15px;
 }

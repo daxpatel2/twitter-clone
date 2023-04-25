@@ -1,4 +1,5 @@
 .feed {
+    overflow-x: hidden;
     flex: .4;
     border-right: 1px solid var(--background-color);
     border-left: 1px solid var(--background-color);
