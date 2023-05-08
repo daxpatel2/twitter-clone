@@ -20,7 +20,7 @@ function Feedcontent ( {userName, profilePic, text} ) {
         };
 
         getPosts();
-        
+
     });
 
 
@@ -28,7 +28,7 @@ function Feedcontent ( {userName, profilePic, text} ) {
         <div className='post'>
             {posts.map((inPost) => { 
                 return (
-                    <Post displayName={inPost.displayName} text={inPost.text} image={'none'}/>
+                    <Post displayName='hello'/>
                 )
             })}
             {/* <Post displayName={'Dax'} text={'hello does this work'} image={"none"}/>.

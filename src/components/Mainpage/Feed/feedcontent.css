@@ -1,36 +1,7 @@
 
 /* index.css */
-.feedcontent {
-    margin: 0 auto;
-    max-width: 600px;
-    padding: 20px;
-  }
-
-  .post {
-    background-color: #ffffff;
-    
-    padding: 16px;
-    margin-bottom: 16px;
-  }
-  
-  .post .display-name {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .post .text {
-    font-size: 16px;
-    font-weight: none;
-    margin-top: 8px;
-  }
-  
-  /* Example styles for avatar image, if applicable */
-  .post .avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 16px;
-  }
-  
-  
+.post {
+  background-color: #ffffff;
+  padding: 2px;
+  margin-bottom: 16px;
+}
