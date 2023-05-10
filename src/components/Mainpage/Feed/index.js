@@ -1,19 +1,34 @@
 import './index.css'
 import Tweetbox from './tweetbox';
-import Feedcontent from './feedcontent';
 import Post from './post'
+import { db } from '../../../firebase';
+import { useState, useEffect } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
 
 //this is logic and style for the entire feed including the box at the top
 
 function Feed() {
+        
+    const [posts,setPosts] = useState([]);
+    const userCollectionRef = collection(db, "posts");
+    
+    useEffect(() => {
+        const getPosts = async () => {
+            const data = await getDocs(userCollectionRef);
+            setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))); //what does this line do? Understand this line
+        };
+        getPosts();
+    });
+
     return (
         <div className="feed">
-            {/* Header */}
             <h2 className="feed-header">Home</h2>
-            {/* Textbox to tweet */}
             <Tweetbox />
-            {/* Feed Content/Posts */}
-            <Post />
+            {(posts.reverse()).map((inPost) => {
+                return (
+                    <Post displayName={inPost.displayName} text={inPost.text} profilePic={inPost.profilePic}/>
+                )
+            })}
         </div>
     )
 }
