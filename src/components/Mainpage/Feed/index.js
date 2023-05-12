@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 
 //this is logic and style for the entire feed including the box at the top
+//add a condition where if there is no image, what to do?
+//might have to edit css as well where if there is not image it gets handeled correctly
 
 function Feed() {
         
@@ -26,7 +28,7 @@ function Feed() {
             <Tweetbox />
             {(posts.reverse()).map((inPost) => {
                 return (
-                    <Post displayName={inPost.displayName} text={inPost.text} profilePic={inPost.profilePic}/>
+                    <Post displayName={inPost.displayName} text={inPost.text} profilePic={inPost.profilePic} displayImg={inPost.displayImg}/>
                 )
             })}
         </div>

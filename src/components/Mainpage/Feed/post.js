@@ -12,7 +12,7 @@ import PublishIcon from "@material-ui/icons/Publish";
 //like the entire page but only for the posts
 //make sure to add image functionality to the database
 
-function Post( { displayName, text, profilePic }) {
+function Post( { displayName, text, profilePic, displayImg }) {
     return (
         <div className='post'>
             <div className='post-avatar'>
@@ -33,7 +33,7 @@ function Post( { displayName, text, profilePic }) {
                     </div>
                 </div>
                 <div className='image-container'>
-                    <img src='https://media.istockphoto.com/id/136700137/photo/side-view-of-a-sitting-gorilla.jpg?s=612x612&w=0&k=20&c=r0f_TVe8GSuYGHhKCNA8jgRcblH_BmaH6ibOabQMPlk='/>
+                    <img src= {displayImg} />
                 </div>
                 <div className="post-footer">
                     <ChatBubbleOutlineIcon className='bubble' fontSize="small" />

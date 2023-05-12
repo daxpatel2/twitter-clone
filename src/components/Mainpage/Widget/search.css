@@ -1,0 +1,15 @@
+.search-wrapper {
+    padding: 10px;
+    border-radius: 40px;
+    background-color: var(--background-color);
+}
+
+.search-box {
+    padding: 10px;
+}
+
+.text-input {
+    border-style: none;
+    background: none;
+    padding: 10px;
+}
