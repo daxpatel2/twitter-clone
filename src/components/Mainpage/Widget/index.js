@@ -17,7 +17,9 @@ function Widget() {
                     <p className='see-more'>See More</p>
                 </div>
             </div>
-            <p className="copyright-stuff">Made with love by @algorithmpirate</p>
+            <p className="copyright-stuff">Made with love by @algorithmpirate <br/>
+            Not Affiliated with <a href='twitter.com'>Twitter Inc</a><br/>
+            Project is for fun only.</p>
         </div>
     )
 }

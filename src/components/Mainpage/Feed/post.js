@@ -2,6 +2,7 @@ import React from 'react';
 import './post.css'; //this will handel styiling within the post
 import { Avatar } from '@material-ui/core'
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
+import VerifiedIcon from '@mui/icons-material/Verified';
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
 import RepeatIcon from "@material-ui/icons/Repeat";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
@@ -24,7 +25,7 @@ function Post( { displayName, text, profilePic, displayImg }) {
                         <h3>
                             {displayName}
                             <span>
-                                <VerifiedUserIcon className="post-badge" />
+                                <VerifiedIcon className="post-badge" />
                             </span>
                         </h3>
                     </div>

@@ -9,7 +9,7 @@ import './sidebar_components.css';
 function SidebarComponents({text,Icon}) {
     return (
         <div className="sidebar-options">
-            <Icon />
+            <Icon className='icon'/>
             <h2>{text}</h2>
         </div>
     )

@@ -3,12 +3,12 @@
     flex: .4;
     border-right: 1px solid var(--background-color);
     border-left: 1px solid var(--background-color);
-    min-width: fit-content;
+    min-width: 600px;
     overflow-y: scroll;
     scrollbar-width: none;
 }
 
-.feed-header{
+.feed-header {
     position: sticky;
     top: 0;
     background-color: white;
