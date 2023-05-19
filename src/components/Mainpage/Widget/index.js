@@ -6,7 +6,7 @@ import Search from './search';
 function Widget() {
     return (
         <div className="widget">
-            <Search className='search-bar'/>
+            <Search/>
             <div className="blocks">
                 <div className="items">
                     <h2 className="whats-happeneing">What's happening</h2>
@@ -14,7 +14,7 @@ function Widget() {
                     <DataFetcher category={"Technology"} />
                     <DataFetcher category={"Politics"} />
                     <DataFetcher category={"Science"} />
-                    <p className='see-more'>See More</p>
+                    <p className='see-more'>Show More</p>
                 </div>
             </div>
             <p className="copyright-stuff">Made with love by @algorithmpirate <br/>
