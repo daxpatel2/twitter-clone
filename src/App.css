@@ -2,7 +2,7 @@ body {
   --twitter-color:#1c9bef;
   --background-color:#e6ecf0;
   --hover-color: #f6f9f9;
-  --twitter-font: 'Roboto', sans-serif;
+  --twitter-font: Segoe UI,'Roboto';
   /* Add a prameter for twitter chirp font */
 }
 

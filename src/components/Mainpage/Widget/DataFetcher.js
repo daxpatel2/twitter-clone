@@ -18,14 +18,12 @@ function DataFetcher({ category }) {
 
   //forrmating the data into blocks
   return (
-    <div>
-        <div className='block'>
-          <p className="type">{type}</p>
-          <p className="title">{title}</p>
-          <a href={link} className="fill-div"></a>
-        </div>
+    <div className='widget-wrapper'>
+        <p className="type">{type}</p>
+        <a href={link}>{title}</a>
     </div>
   );
 }
 
 export default DataFetcher;
+

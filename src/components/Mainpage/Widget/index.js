@@ -1,12 +1,12 @@
 import './index.css';
 import DataFetcher from './DataFetcher';
-import Searchbar from './searchbar';
+import Search from './search';
 //find better styling for made with love by @algorithmpirate
 
 function Widget() {
     return (
         <div className="widget">
-            <Searchbar />
+            <Search className='search-bar'/>
             <div className="blocks">
                 <div className="items">
                     <h2 className="whats-happeneing">What's happening</h2>

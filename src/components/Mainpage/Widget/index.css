@@ -9,6 +9,7 @@
     background-color: white;
     margin-bottom: 20px;
     min-width: 350px;
+    margin-top: 7px;
 }
 
 .blocks {
@@ -21,6 +22,7 @@
 .items > .whats-happeneing {
     font-size: 25px;
     font-weight: bold;
+    font-family: var(--twitter-font);
     color: #14171a;
     padding-left: 15px;
 }
@@ -39,4 +41,8 @@
     font-weight: bold;
     color: var(--twitter-color);
     padding-left: 15px;
+}
+
+.widget > .search-bar {
+    padding: 10px;
 }

@@ -1,15 +1,26 @@
 .search-wrapper {
-    padding: 10px;
+    padding: 5px;
     border-radius: 40px;
-    background-color: var(--background-color);
+    background-color: var(--hover-color);
+    margin-bottom: 10px;
+    display: flex;
 }
 
-.search-box {
-    padding: 10px;
+.input-wrapper {
+    flex: .9;
 }
-
 .text-input {
+    font-family: var(--twitter-font);
+    size: 14px;
     border-style: none;
     background: none;
-    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.mui-search {
+    color: darkgrey!important;
+    margin-top: 10px;
+    font-size: 25px!important;
+    flex: .1;
 }

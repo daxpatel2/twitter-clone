@@ -5,8 +5,10 @@ function Search() {
     //just the search bar and its functionality
     return (
         <div className='search-wrapper'>
-            <SearchIcon fontSize='medium' className='mui-search'/>
-            <input className='text-input' placeholder='Search Twitter'></input>
+            <SearchIcon className='mui-search'/>
+            <div className='input-wrapper'>
+                <input className='text-input' placeholder='Search Twitter'></input>
+            </div>
         </div>
     )
 }

@@ -14,27 +14,18 @@
     font-family: var(--twitter-font);
 }
 
-.block {
-    background-color: var(--hover-color);
-    align-items: center;
-}
-
-.block {
-/* Your existing styles */
-    cursor: pointer; /* Add cursor property to change cursor to pointer */
-    transition: var(--background-color) 0.3s ease;
-    pointer-events: auto; /* Ensure the block is clickable */
-}
-
-a.fill-div {
-    display: block;
-    height: 100%;
-    width: 100%;
+a:link {
     text-decoration: none;
 }
 
+a:visited {
+    text-decoration: none;
+}
 
-.block:hover {
-    /* Styles for hover effect */
-    background-color: #dcdcdc; /* Change to the desired darker color */
-  }
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
