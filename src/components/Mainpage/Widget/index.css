@@ -8,6 +8,7 @@
     margin-bottom: 20px;
     min-width: 350px;
     margin-top: 7px;
+    margin-right: auto;
 }
 
 .blocks {
@@ -17,11 +18,12 @@
 }
 
 .items > .whats-happeneing {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     font-family: var(--twitter-font);
     color: #14171a;
     padding-left: 15px;
+    padding-top: 7px;
 }
 
 .widget > .copyright-stuff {

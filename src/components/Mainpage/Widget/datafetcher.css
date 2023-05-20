@@ -3,12 +3,12 @@
 }
 
 .type {
-    margin-top: 5px;
+    margin-top: 15px;
     color: #657786;
     font-size: 13px;
     font-weight: 300;
     font-family: var(--twitter-font);
-    padding-left: 14px;
+    padding-left: 15px;
 }
 
 .title {
@@ -16,6 +16,7 @@
     font-size: 15px;
     font-weight: bold;
     font-family: var(--twitter-font);
+    padding-right: 5px;
 }
 
 a:link {

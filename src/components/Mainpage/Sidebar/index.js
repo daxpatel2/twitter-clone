@@ -5,9 +5,9 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import HomeIcon from '@material-ui/icons/Home';
 import ExploreIcon from '@material-ui/icons/Explore';
 //import MessageIcon from '@material-ui/icons/Message'
-import NotificaIcon from '@material-ui/icons/NotificationsNone'
-import { Button } from '@material-ui/core' //since this is material UI core it is a clickable button rather than a svg image which would be @material-ui/icons
-import './User Images/userComponent'
+import NotificaIcon from '@material-ui/icons/NotificationsNone';
+import { Button } from '@material-ui/core';
+import './User Images/userComponent';
 import UserComponent from './User Images/userComponent';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
@@ -17,18 +17,33 @@ import Face3Icon from '@mui/icons-material/Face3';
 
 
 
-
 function Sidebar() {
     return (
         <div className="sidebar">
-            <TwitterIcon className="sidebar-twitterIcon"/>
-            <SidebarComponents text="Home" Icon={HomeIcon}/>
-            <SidebarComponents text="Explore" Icon={TagIcon}/>
-            <SidebarComponents text="Notifications" Icon={NotificaIcon}/>
-            <SidebarComponents text="Messages" Icon={MailOutlineIcon}/>
-            <SidebarComponents text="Bookmarks" Icon={BookmarkIcon}/>
-            <SidebarComponents text="Twitter Blue" Icon={VerifiedIcon}/>
-            <SidebarComponents text="Profile" Icon={Face3Icon}/>
+            <a href='/main'>
+                <TwitterIcon className="sidebar-twitterIcon"/>
+            </a>
+            <a href='/main'>
+                <SidebarComponents text="Home" Icon={HomeIcon}/>
+            </a>
+            <a href='/explore'>
+                <SidebarComponents text="Explore" Icon={TagIcon}/>
+            </a>
+            <a href='/notifications'>
+                <SidebarComponents text="Notifications" Icon={NotificaIcon}/>
+            </a>
+            <a href='/messages'>
+                <SidebarComponents text="Messages" Icon={MailOutlineIcon}/>
+            </a>
+            <a href='bookmarks'>
+                <SidebarComponents text="Bookmarks" Icon={BookmarkIcon}/>
+            </a>
+            <a href='/blue'>
+                <SidebarComponents text="Twitter Blue" Icon={VerifiedIcon}/>
+            </a>
+            <a href='/profile'>
+                <SidebarComponents text="Profile" Icon={Face3Icon}/>
+            </a>
             <Button variant="outlined" className="sidebar-button" fullWidth>Tweet</Button>
             <UserComponent />
         </div>
