@@ -14,7 +14,7 @@ function Widget() {
                     <DataFetcher category={"Technology"} />
                     <DataFetcher category={"Politics"} />
                     <DataFetcher category={"Science"} />
-                    <p className='see-more'>Show More</p>
+                    <p href="/explore" className='show-more'>Show More</p>
                 </div>
             </div>
             <p className="copyright-stuff">Made with love by @algorithmpirate <br/>

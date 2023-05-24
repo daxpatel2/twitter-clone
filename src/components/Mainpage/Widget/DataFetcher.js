@@ -15,12 +15,10 @@ function DataFetcher({ category }) {
   const title = data.title;
   const link = data.link;
 
-
-  //forrmating the data into blocks
   return (
     <div>
-      <p className="type">{type}</p>
       <div className='widget-wrapper'>
+        <p className="type">{type}</p>
         <a href={link}>{title}</a>
       </div>
     </div>

@@ -9,16 +9,16 @@
 }
   
 .post-body > .image-container {
-  height: 400px;
-  width: 400px;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
 }
 
 .post-body > .image-container > img {
-  border-radius: 20px;
-  max-width: 100%;
+  border-radius: 30px;
+  max-width: 99%;
   max-height: 100%;
-
+  padding-right: 10px;
 }
 
 .post-body {
@@ -38,7 +38,7 @@
 .post-footer {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .bubble:hover {
