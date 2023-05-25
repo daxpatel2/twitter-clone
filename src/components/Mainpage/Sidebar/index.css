@@ -1,7 +1,6 @@
 .sidebar {
     flex: .3;
     margin-top: 10px;
-    padding-left: 0px;
     padding-right: 30px;
     min-width: 220px;
 }
@@ -33,4 +32,8 @@
     border-radius: 90%;
     color: black;
     transition: color 100ms ease-out;
+}
+
+.user-info {
+    margin-top: 1000px;
 }
