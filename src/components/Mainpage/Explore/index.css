@@ -1,0 +1,15 @@
+.main {
+    flex-direction: row;
+}
+
+.sidebar {
+    flex: .3;
+}
+
+.explore {
+    flex: .4;
+}
+
+.wideget {
+    flex: .3;
+}

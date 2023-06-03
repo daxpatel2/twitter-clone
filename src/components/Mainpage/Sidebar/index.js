@@ -1,4 +1,5 @@
 import './index.css'
+import { useState } from 'react';
 import SidebarComponents from "./sidebar_components";
 import React from "react";
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -16,14 +17,22 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import Face3Icon from '@mui/icons-material/Face3';
 
 
-
 function Sidebar() {
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [active,setActive] = useState(false);
+
+    const handelClicked = () => {
+        setActive(!active);
+    }
+
+    const textStyle = active ? { fontWeight: 'bold'} :{};
+
     return (
         <div className="sidebar">
-            <a href='/main'>
+            <a href='/main' stlye={ textStyle } onClick={handelClicked}>
                 <TwitterIcon className="sidebar-twitterIcon"/>
             </a>
-            <a href='/main'>
+            <a href='/main' >
                 <SidebarComponents text="Home" Icon={HomeIcon}/>
             </a>
             <a href='/explore'>

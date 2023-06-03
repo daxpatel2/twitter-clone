@@ -1,5 +1,5 @@
-import Sidebar from "../Mainpage/Sidebar";
-import Widget from "../Mainpage/Widget";
+import Sidebar from "../Sidebar";
+import Widget from "../Widget";
 import ExploreMid from "./ExploreMid";
 
 function Explore() {
@@ -7,10 +7,10 @@ function Explore() {
 
         //could fuigure out a way to keep side bar and widget permanant no matter what instead of haveing to 
         //return it each time
-        <div>
-            <Sidebar />
-            <ExploreMid />
-            <Widget />
+        <div className="main">
+            <Sidebar className='sidebar'/>
+            <ExploreMid className='explore'/>
+            <Widget classname='widget'/>
         </div>
     )
 }
