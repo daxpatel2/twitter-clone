@@ -3,6 +3,7 @@
     font-size: 36px;
     font-weight: 700;
     color: black;
+    text-align: center;
 }
 
 .forms > .email,.password {
@@ -18,7 +19,6 @@
     outline: none;
     background: none;
     font-size: 18px;
-
 }
 
 .forms > .password > .pass-input {

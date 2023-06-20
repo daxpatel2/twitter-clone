@@ -38,6 +38,12 @@ function Signupforms() {
                         setPassword(event.target.value);
                     }}></input>
                 </div>
+                <div className='user__img'>
+                    <p>
+                        Hello
+                    </p>
+                    {/* drag and drop an image functionality */}
+                </div>
                 <p className='message'>{message}</p>
                <button className="register-button" type='submit'>Next</button>
             </form>
