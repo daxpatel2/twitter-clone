@@ -1,6 +1,6 @@
 import './index.css';
 import { useState, React } from 'react';
-import { auth } from '../../../firebase';
+import { auth, db } from '../../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,6 +8,9 @@ function Signupforms() {
     const [email, setemail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    const [image, setImage] = useState('');
+    const [uid, setUID] = useState('');
+
     let navigate = useNavigate();
 
     const handleSubmit = (event) => {
@@ -15,14 +18,33 @@ function Signupforms() {
         createUserWithEmailAndPassword(auth,email, password)
             .then((userCredential) => {
                 setMessage(`Account created for ${userCredential.user.email}`);
+                setUID(userCredential.user.UID);
                 //if account created successfully
                 navigate('/main');
+                return true;
             })
             .catch((error) => {
                 setMessage(error.message);
+                return false;
             }
         );
-    };
+    }
+
+    async function handelDB(event) {
+        event.preventDefault();
+        try {
+            const usersRef = db.collections('users');
+            await usersRef.add({
+                username : email.substring(0,email.indexOf("@")), 
+                email: email,
+                password: password,
+                image: image,
+                UID: uid //we can refrance this collections document by this unique UID for each person that is registered
+              });
+        } catch (e) {
+            setMessage(e.message)
+        }
+    }
 
     return (
         <div>
@@ -39,13 +61,12 @@ function Signupforms() {
                     }}></input>
                 </div>
                 <div className='user__img'>
-                    <p>
-                        Hello
-                    </p>
-                    {/* drag and drop an image functionality */}
+                    <input name='image' type="text" placeholder="Enter URL of profile IMG" onChange={(event) => {
+                        setImage(event.target.value)
+                    }}></input>                   
                 </div>
                 <p className='message'>{message}</p>
-               <button className="register-button" type='submit'>Next</button>
+               <button onClick={handleSubmit ? handelDB : ''} className="register-button" type='submit'>Next</button>
             </form>
             <div className='returning-user'>
                 <a href='/' className='returning-user-text'>Already have an account?</a>
