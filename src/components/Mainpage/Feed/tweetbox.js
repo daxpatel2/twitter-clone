@@ -1,5 +1,5 @@
 import { Avatar, Button } from "@material-ui/core";
-import React,{ useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 import "./tweetbox.css";
 import {
   ImageOutlined,
@@ -10,14 +10,14 @@ import {
   LocationOnOutlined,
 } from "@mui/icons-material";
 
-import { db,auth } from "../../../firebase";
+import { db, auth } from "../../../firebase";
 
 //this is logic and style for the tweet box at the top of the feed
 //this is where the tweet creation will happen
 //clicking on tweet should grab all the info in the text box, the image link, and display it
 function Tweetbox() {
   const [currentUser, setCurrentUser] = useState(null);
-  const [tweetContent, setTweetContent] = useState('');
+  const [tweetContent, setTweetContent] = useState("");
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -29,7 +29,7 @@ function Tweetbox() {
     });
     return () => unsubscribe(); // Cleanup the listener when the component unmounts
   }, []);
-  
+
   // function handleTweetSubmit(e) {
   //   e.preventDefault();
   //   //send the tweet value to the backend database, we already have a location for posts, just need to add the sent tweet to thier,
@@ -57,13 +57,18 @@ function Tweetbox() {
           </div>
           <div className="tweetbox__input">
             <div className="tweetbox__icons">
-              <ImageOutlined className="tweetbox__icon"/>
-              <GifBoxOutlined className="tweetbox__icon"/>
-              <PollOutlined className="tweetbox__icon"/>
-              <SentimentSatisfiedAltOutlined className="tweetbox__icon"/>
-              <CalendarTodayOutlined className="tweetbox__icon"/>
+              <ImageOutlined className="tweetbox__icon" />
+              <GifBoxOutlined className="tweetbox__icon" />
+              <PollOutlined className="tweetbox__icon" />
+              <SentimentSatisfiedAltOutlined className="tweetbox__icon" />
+              <CalendarTodayOutlined className="tweetbox__icon" />
             </div>
-            <Button onClick={() => console.log(currentUser)} className="tweetbox__btn">Tweet</Button>
+            <Button
+              onClick={() => console.log(currentUser)}
+              className="tweetbox__btn"
+            >
+              Tweet
+            </Button>
           </div>
         </div>
       </form>
