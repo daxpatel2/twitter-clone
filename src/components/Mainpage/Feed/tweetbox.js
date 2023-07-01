@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Avatar, Button } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import "./tweetbox.css";
@@ -11,10 +12,15 @@ import {
 } from "@mui/icons-material";
 
 import { db, auth } from "../../../firebase";
+=======
+>>>>>>> parent of 385c464 (layout for new database config)
 
+import { Avatar,Button } from '@material-ui/core';
+import './tweetbox.css'
 //this is logic and style for the tweet box at the top of the feed
 //this is where the tweet creation will happen
 //clicking on tweet should grab all the info in the text box, the image link, and display it
+<<<<<<< HEAD
 function Tweetbox() {
   const [currentUser, setCurrentUser] = useState(null);
   const [tweetContent, setTweetContent] = useState("");
@@ -70,10 +76,21 @@ function Tweetbox() {
               Tweet
             </Button>
           </div>
+=======
+//how will we know which user sent it though?
+function Tweetbox () {
+    return (
+        <div className="tweetbox">
+            <form>
+                <div className="tweetbox-input">
+                    <Avatar className="tweetbox-avatar"></Avatar>
+                    <input placeholder="Whats happening?" type="text"></input>
+                </div>
+                <Button className="tweetbox-button">Tweet</Button>
+            </form>
+>>>>>>> parent of 385c464 (layout for new database config)
         </div>
-      </form>
-    </div>
-  );
+    )
 }
 
 export default Tweetbox;

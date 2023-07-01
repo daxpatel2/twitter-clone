@@ -27,10 +27,6 @@
   margin-bottom: 1rem;
 }
 
-.tweetbox__input input:focus {
-  outline: none;
-}
-
 .tweetbox__btn {
   background-color: var(--twitter-color) !important;
   border-radius: 33px !important;

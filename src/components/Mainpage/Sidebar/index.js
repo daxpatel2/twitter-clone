@@ -19,48 +19,42 @@ import Face3Icon from '@mui/icons-material/Face3';
 
 function Sidebar() {
     const [selectedItem, setSelectedItem] = useState(null);
-    const handleClick = (link) => {
-        setSelectedItem(link);
-    };
-    const isBold = (link) => {
-        return selectedItem === link ? 'bold' : 'normal';
-    };
+    const [active,setActive] = useState(false);
+
+    const handelClicked = () => {
+        setActive(!active);
+    }
+
+    const textStyle = active ? { fontWeight: 'bold'} :{};
+
     return (
         <div className="sidebar">
-            <span><a href='/main' className={isBold('link1')}
-        onClick={() => handleClick('link1')}>
+            <a href='/main' stlye={ textStyle } onClick={handelClicked}>
                 <TwitterIcon className="sidebar-twitterIcon"/>
             </a>
-            </span>
-
-            <span style={{ fontWeight: isBold('link2') }}
-        onClick={() => handleClick('link2')}><a href='/main' >
+            <a href='/main' >
                 <SidebarComponents text="Home" Icon={HomeIcon}/>
             </a>
-            </span>
-
-            <span style={{ fontWeight: isBold('link3') }}
-        onClick={() => handleClick('link3')}><a href='/explore' >
+            <a href='/explore'>
                 <SidebarComponents text="Explore" Icon={TagIcon}/>
             </a>
-            </span>
-            <a href='/main'>
+            <a href='/notifications'>
                 <SidebarComponents text="Notifications" Icon={NotificaIcon}/>
             </a>
-            <a href='/main'>
+            <a href='/messages'>
                 <SidebarComponents text="Messages" Icon={MailOutlineIcon}/>
             </a>
-            <a href='/main'>
+            <a href='bookmarks'>
                 <SidebarComponents text="Bookmarks" Icon={BookmarkIcon}/>
             </a>
-            <a href='/main'>
+            <a href='/blue'>
                 <SidebarComponents text="Twitter Blue" Icon={VerifiedIcon}/>
             </a>
-            <a href='/main'>
+            <a href='/profile'>
                 <SidebarComponents text="Profile" Icon={Face3Icon}/>
             </a>
             <Button variant="outlined" className="sidebar-button" fullWidth>Tweet</Button>
-            {/* <UserComponent className='user-info'/> */}
+            <UserComponent className='user-info'/>
         </div>
     );
 }
