@@ -6,16 +6,14 @@ import { useNavigate } from 'react-router-dom';
 import AuthStateObserver from '../../AuthStates';
 
 function Loginmain() {
-    //create a state for the email and setemail and password
+    //create a state for the emailsetemail and password
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
     let navigate = useNavigate();
 
     const handleSubmit = (event) => {
-        //prevents the default browser refresh
         event.preventDefault();
-        //async firebase function for signup and login
         signInWithEmailAndPassword(auth,email, password)
             .then((userCredential) => {
                 //if login was successfully
