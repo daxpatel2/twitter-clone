@@ -52,12 +52,12 @@ function Signupforms() {
             <h2 className="title-signup-page">Join Twitter today</h2>
             <form onSubmit={handleSubmit} className='forms'>
                 <div className='name'>
-                    <input value={name} name="name" placeholder="name" className="name-input" type="text" onChange={(event) => {
+                    <input value={name} name="name" placeholder="name" className="name__input" type="text" onChange={(event) => {
                         setName(event.target.value);
                     }}></input>
                 </div>
                 <div className='userTag'>
-                    <input value={userTag} name="userTag" placeholder="Enter a cool username" className="tag-input" type="text" onChange={(event) => {
+                    <input value={userTag} name="userTag" placeholder="Enter a cool username" className="tag__input" type="text" onChange={(event) => {
                         setUserTag(event.target.value);
                     }}></input>
                 </div>

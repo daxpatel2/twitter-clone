@@ -61,9 +61,6 @@ function Sidebar() {
                 <SidebarComponents text="Profile" Icon={Face3Icon}/>
             </a>
             <Button variant="outlined" className="sidebar-button" fullWidth>Tweet</Button>
-            {/* <UserComponent className='user-info'/> */}
-            {/* Call the new User info componenet */}
-            {/* <UserBar /> */}
         </div>
     );
 }

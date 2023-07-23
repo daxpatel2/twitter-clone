@@ -1,9 +1,25 @@
-import { React } from 'react'
+import { React} from 'react'
 import './index.css'
-import profilePic from '../../assets/profile.png'
-import { useState } from 'react'
+import { auth, db } from '../../firebase'
+import { UilSignout } from '@iconscout/react-unicons'
+import firebase from 'firebase/app';
+import { getAuth, signOut } from "firebase/auth";
 
 function UserBar({name,userTag,profileImg}) {
+
+    const handleLogout = () => {
+        if (window.confirm('Do you want to log out?')) {
+            const auth = getAuth();
+            signOut(auth).then(() => {
+                console.log("logged out")
+            // Sign-out successful.
+            }).catch((error) => {
+            // An error happened.
+                console.log(error)
+            });
+          }
+          alert('Logged out successfully!');
+    };
 
     return (
         <div className='main'>
@@ -13,9 +29,7 @@ function UserBar({name,userTag,profileImg}) {
                     <h1 className='username'>{name}</h1>
                     <h1 className='atUser'>@{userTag}</h1>
                 </div>
-                <div className='button'>
-                    ...
-                </div>
+                <UilSignout onClick={handleLogout} className='uli'/>
             </div>
         </div>
     )

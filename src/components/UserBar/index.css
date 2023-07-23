@@ -39,12 +39,15 @@
     top: -5px;
     color: grey;
 }
-.button {
+
+.uli {
     flex: .05;
     align-self: center;
-    font-size: large
+    scale: 3;
+
 }
-/* 
-.button::onHover {
-    color: aqua ;
-} */
+
+.uli:hover {
+    cursor: pointer;
+    color: red;
+}

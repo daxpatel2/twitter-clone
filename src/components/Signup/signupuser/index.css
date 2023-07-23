@@ -6,6 +6,22 @@
     text-align: center;
 }
 
+.forms > .name{
+    display: block;
+    padding: 15px;
+    border: .5px solid black;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.forms > .userTag {
+    display: block;
+    padding: 15px;
+    border: .5px solid black;
+    border-radius: 5px;
+    margin: 10px;
+}
+
 .forms > .email,.password,.img {
     display: block;
     padding: 15px;
@@ -29,6 +45,20 @@
 }
 
 .forms > .img > .img__input {
+    border: none !important;
+    outline: none;
+    background: none;
+    font-size: 18px;
+}
+
+.forms > .name > .name__input {
+    border: none !important;
+    outline: none;
+    background: none;
+    font-size: 18px;
+}
+
+.forms > .userTag > .tag__input {
     border: none !important;
     outline: none;
     background: none;

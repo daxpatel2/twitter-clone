@@ -5,7 +5,6 @@ import { collection, onSnapshot, query, where } from 'firebase/firestore';
 
 const AuthStateObserver = () => {
   const [user, setUser] = useState(null);
-  const [books, setBooks] = useState([]);
   const [name, setName] = useState("");
   const [img, setImg] = useState("");
   const [tag, setTag] = useState("");
@@ -24,7 +23,6 @@ const AuthStateObserver = () => {
             snapshot.docs.forEach((doc) => {
                 books.push({ ...doc.data(), id: doc.id})
             })
-            setBooks(books[0]);
             setName(books[0].name)
             setImg(books[0].image)
             setTag(books[0].userTag)
@@ -35,12 +33,11 @@ const AuthStateObserver = () => {
     return () => unsubscribe();
   }, []);
 
-  const uid = user?.uid;
-
   return (
     <div>
-      {user ? ( <UserBar name={name} profileImg={img} userTag={tag} /> ) 
+      {user ? ( <UserBar name={name} profileImg={img} userTag={tag} /> )
       : (
+        // TODO: make this a headless ui popup
         alert("Please loggin to the app!")
       )}
     </div>
