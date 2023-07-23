@@ -15,6 +15,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import TagIcon from '@mui/icons-material/Tag';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import Face3Icon from '@mui/icons-material/Face3';
+import UserBar from '../../UserBar/index.js'
 
 
 function Sidebar() {
@@ -61,6 +62,8 @@ function Sidebar() {
             </a>
             <Button variant="outlined" className="sidebar-button" fullWidth>Tweet</Button>
             {/* <UserComponent className='user-info'/> */}
+            {/* Call the new User info componenet */}
+            {/* <UserBar /> */}
         </div>
     );
 }

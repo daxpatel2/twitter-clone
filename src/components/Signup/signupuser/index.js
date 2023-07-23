@@ -1,17 +1,18 @@
 import './index.css';
-import { useState, React } from 'react';
+import { useState, React, useEffect } from 'react';
 import { auth, db } from '../../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { collection, addDoc } from 'firebase/firestore';
 
 
-
 function Signupforms() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
-    const [uid, setUID] = useState('');
+    const [name, setName] = useState('');
+    const [userTag, setUserTag] = useState('');
+
     //for database use only
     const [image, setImage] = useState('');
     const usersCollectionRef = collection(db, "users");
@@ -23,26 +24,43 @@ function Signupforms() {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 setMessage(`Account created for ${userCredential.user.email}`);
-                setUID(userCredential.user.uid);
-                console.log(uid);
-                setEmail(userCredential.user.email);
-                setTimeout(navigate("/main"),1000);
+                setEmail(userCredential.user.email +"UID: "+userCredential.user.uid);
+                setTimeout(() => {
+                    navigate("/main");
+                    handleDB(userCredential.user.uid); // You can call handleDB after navigating if needed
+                }, 1000);
             })
             .catch((error) => {
                 setMessage(error.message);
             });
     }
 
-    async function handleDB() {
+    async function handleDB(uid) {
         // Add the user to the Firestore database
-        await addDoc(usersCollectionRef, { uid:uid, image:image, email:email, password:password })
-        console.log("HIT CONFIRM")
+        await addDoc(usersCollectionRef, {
+            uid: uid,
+            name:name,
+            userTag:userTag,
+            image: image,
+            email: email,
+            password: password
+        })
     };
 
     return (
         <div>
             <h2 className="title-signup-page">Join Twitter today</h2>
             <form onSubmit={handleSubmit} className='forms'>
+                <div className='name'>
+                    <input value={name} name="name" placeholder="name" className="name-input" type="text" onChange={(event) => {
+                        setName(event.target.value);
+                    }}></input>
+                </div>
+                <div className='userTag'>
+                    <input value={userTag} name="userTag" placeholder="Enter a cool username" className="tag-input" type="text" onChange={(event) => {
+                        setUserTag(event.target.value);
+                    }}></input>
+                </div>
                 <div className='email'>
                     <input value={email} name="email" placeholder="email" className="user-input" type="text" onChange={(event) => {
                         setEmail(event.target.value);
@@ -59,7 +77,7 @@ function Signupforms() {
                     }}></input>
                 </div>
                 <p className='message'>{message}</p>
-                <button onClick={handleDB} className="register-button" type='submit'>Next</button>
+                <button  className="register-button" type='submit'>Next</button>
             </form>
             <div className='returning-user'>
                 <a href='/' className='returning-user-text'>Already have an account?</a>

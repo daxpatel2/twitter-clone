@@ -3,6 +3,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import './index.css';
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import AuthStateObserver from '../../AuthStates';
 
 function Loginmain() {
     //create a state for the email and setemail and password
@@ -26,6 +27,8 @@ function Loginmain() {
                 setMessage(`routing to mainpage for ${userCredential.user.email}`);
                 //navigate to /main
                 navigate('/main');
+                setTimeout(<AuthStateObserver />,1000)
+
             })
             .catch((error) => {
                 setMessage(error.message);
